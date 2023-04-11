@@ -4,7 +4,8 @@
   "description": "an updated version of my previous notes app",
   "main": "index.js",
   "scripts": {
-    "test": "npm run server"
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js"
   },
   "repository": {
     "type": "git",
