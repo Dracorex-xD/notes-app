@@ -1,0 +1,101 @@
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  color: #fff;
+  gap: 10px;
+  min-height: 100vh;
+  background: url("https://free4kwallpapers.com/uploads/originals/2022/03/28/minimal-moonlight-wallpaper.png") no-repeat center center/ cover
+
+}
+.sub-container {
+  min-width: 10rem;
+  min-height: 13rem;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-items: center;
+
+}
+
+.Note .NoteEditor .MoteList .title .AddNoteBtn {
+  padding: 10px;
+}
+
+.sub-container:nth-child(1){
+  border-right: solid rgb(255, 255, 255) 5px;
+  grid-column: 1;
+  grid-row: 1/4;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.sub-container:nth-child(2) {
+  justify-self: left;
+
+}
+
+.sub-container:nth-child(2) * {
+  padding: 0.5rem;
+
+}
+
+.Note {
+  display: flex;
+  color: rgb(105, 103, 103);
+  list-style: armenian;
+}
+
+.NoteEditor {
+  grid-row: 2/4;
+  grid-column: 2/4;
+  display: flex;
+  justify-self: center;
+
+
+}
+
+.NoteList {
+  grid-column: 1;
+  grid-row: 1/4;
+  justify-self: center;
+  align-self: center;
+
+}
+
+.title {
+  grid-row: 1;
+  display: flex;
+  grid-column: 2/4;
+  padding: 1rem;
+  
+}
+
+.AddNoteBtn {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  padding: 2rem;
+
+}
+
+.Searchbar {
+  width: 25rem;
+  margin-top: 3rem;
+  
+}
