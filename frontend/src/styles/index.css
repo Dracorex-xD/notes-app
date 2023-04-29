@@ -37,6 +37,7 @@ button {
   margin: 2rem;
   overflow: hidden;
 
+  transition: 1s;
 }
 
 .sub-container {
@@ -89,7 +90,8 @@ button {
   justify-self: center;
   display: grid;
   width: 90%;
-  overflow: auto;
+  overflow: scroll;
+  height: 50rem;
 
 }
 
@@ -111,7 +113,11 @@ button {
   border-left: none;
   border-right: none;
 
+}
 
+.NoteEditor input:hover, textarea:hover {
+  transition: 0.88s;
+  border-image: linear-gradient(to left, var(--main-color-one), var(--shadow-color-one)) 1;
 }
 
 .NoteEditor input::placeholder, textarea::placeholder {
@@ -129,29 +135,62 @@ button {
 .NoteEditor textarea::placeholder {
   padding: 0;
   padding-left: 1rem;
+  overflow: visible;
 
+}
+
+.NoteEditor input::placeholder {
+  color: var(--main-color-one);
+  text-shadow: none;
+
+
+}
+
+.NoteEditor input {
+  color: var(--main-color-one);
+  text-shadow: none;
+}
+
+.NoteEditor textarea {
+  height: 25rem;
+  padding: 30px;
 }
 
 .NoteEditor button {
   outline: none;
   background: none;
-  border: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0.5rem;
+  transition: 0.88s;
+  border-image: linear-gradient(to right, var(--main-color-one), var(--shadow-color-one)) 1;
 
 }
 
 .NoteEditorButtons {
+  width: 25%;
   display: flex;
   align-items: center;
   justify-self: center;
   justify-content: center;
   background: var(--background-color-one);
-  box-shadow: var(--main-color-one) 5px 5px 10px;
-  width: 25%;
+  height: 5rem;
   margin: 1rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   height: 30%;
-  border-radius: 0.5rem;
+  border-image: linear-gradient(to right, var(--main-color-one), var(--shadow-color-one)) 1;
+  transition: 0.88s;
 
 
+
+}
+
+.NoteEditor button:hover {
+  transition: 0.88s;
+  border-image: linear-gradient(to left, var(--main-color-one), var(--shadow-color-one)) 1;
 }
 
 .NoteList {
@@ -167,7 +206,6 @@ button {
 
 .NoteList li {
   display: grid;
-  border-image: linear-gradient(to right, var(--main-color-one), var(--shadow-color-one)) 1;
   border-width: 3px;
   border-style: solid;
   padding: 15px;
@@ -180,7 +218,16 @@ button {
   min-height: 8.5rem;
   max-width: 40rem;
   max-height: 17rem;
+  border-image: linear-gradient(to right, var(--main-color-one), var(--shadow-color-one)) 1;
   grid-template-columns: repeat(2, 1fr);
+
+  transition: 0.89s;
+
+}
+
+.NoteList li:hover {
+  transition: 0.88s;
+  border-image: linear-gradient(to left, var(--main-color-one), var(--shadow-color-one)) 1;
 
 }
 
@@ -191,14 +238,16 @@ button {
   padding: 1rem;
   margin-left: 4rem;
   color:  var(--main-color-one);
+  font-size: 3rem;
+  letter-spacing: 10px;
 
 }
-/* 
+
 .Searchbar {
   width: 25rem;
   margin-top: 3rem;
 
-} */
+}
 
 ::-webkit-scrollbar {
   display: none;
@@ -211,6 +260,13 @@ button {
   border: none;
   margin: 10px;
   text-align:start;
+
+  transition: 1s;
+}
+
+.deleteBtn:hover {
+  transition: 0.5s;
+  font-size: larger;
 }
 
 .SaveBtn {
@@ -218,6 +274,7 @@ button {
   font-weight: 700;
   font-size: 1rem;
   font-family: 'Bruno Ace', cursive;
+  text-shadow: var(--text-shadow-color-one);
 }
 .note-text {
   color: var(--main-color-two);
@@ -229,7 +286,9 @@ button {
 }
 
 .note-title {
-  overflow: hidden;
+  overflow: visible;
   padding: 5px;
   height: 30rem;
+  width: 25rem;
 }
+

@@ -9,7 +9,6 @@ function App() {
 
   const handleNoteClick = (note) => {
     setSelectedNote(note.target.id);
-    console.log(selectedNote);
   };
 
   return (
@@ -18,7 +17,7 @@ function App() {
         <NoteList onClick={handleNoteClick} />
       </div>
       <div className='sub-container'>
-        <h1 className='title'>Notes App_</h1>
+        <h1 className='title'>Notes App</h1>
         {/* <Searchbar /> */}
       </div>
       <NoteEditor note={selectedNote} />

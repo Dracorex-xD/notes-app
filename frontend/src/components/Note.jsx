@@ -1,5 +1,4 @@
 export const Note = (props) => {
-
   return (
     <div className="Note">
       <h1 className="note-title">{props.title}</h1>

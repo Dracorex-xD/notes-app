@@ -27,7 +27,6 @@ const NoteEditor = ({ note }) => {
   const handleSaveClick = async () => {
     titleText = document.querySelector('.NoteEditorTitle').value;
     textText = document.querySelector('.NoteEditorText').value;
-    console.log(titleText, textText);
     title = titleText;
     text = textText;
 
@@ -41,11 +40,9 @@ const NoteEditor = ({ note }) => {
 
     try {
       if (note) {
-        console.log('put req');
         await axios.put(`${URL}${note}`, { title, text });
 
       } else {
-        console.log('post req');
         await axios.post(`${URL}`, { title, text });
 
       }

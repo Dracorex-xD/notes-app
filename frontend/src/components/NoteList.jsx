@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { Note } from "./Note"
 
 
-const NoteList = (props) => { 
+const NoteList = (props) => {
   const URL = "http://localhost:5000/Notes-app/";
   const [listOfNotes, setListOfNotes] = useState([]);
 
@@ -28,9 +28,9 @@ const NoteList = (props) => {
       <div className="NoteList" onClick={props.onClick}>
         <ul>
           {
-            listOfNotes.map((note) => {         
+            listOfNotes.map((note) => {
               return <li className='listElement' key={note._id} id={note._id}>
-                <Note title={note.title} text={note.text}/>
+                <Note title={note.title} text={note.text} />
                 <button onDoubleClick={(e) => { deleteNote(note._id, e) }} className='deleteBtn'>
                   x
                 </button>
