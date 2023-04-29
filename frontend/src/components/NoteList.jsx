@@ -31,7 +31,9 @@ const NoteList = (props) => {
             listOfNotes.map((note) => {         
               return <li className='listElement' key={note._id} id={note._id}>
                 <Note title={note.title} text={note.text}/>
-                <button onDoubleClick={(e) => { deleteNote(note._id, e) }}></button>
+                <button onDoubleClick={(e) => { deleteNote(note._id, e) }} className='deleteBtn'>
+                  x
+                </button>
               </li>
             })
           }

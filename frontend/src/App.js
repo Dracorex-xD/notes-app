@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NoteEditor from './components/NoteEditor';
 import NoteList from './components/NoteList';
-import Searchbar from './components/Searchbar';
+/* import Searchbar from './components/Searchbar'; */
 
 function App() {
   const [selectedNote, setSelectedNote] = useState('');
@@ -19,7 +19,7 @@ function App() {
       </div>
       <div className='sub-container'>
         <h1 className='title'>Notes App_</h1>
-        <Searchbar />
+        {/* <Searchbar /> */}
       </div>
       <NoteEditor note={selectedNote} />
       <div className='sub-container'></div>

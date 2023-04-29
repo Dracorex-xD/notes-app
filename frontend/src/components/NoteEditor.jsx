@@ -31,19 +31,7 @@ const NoteEditor = ({ note }) => {
     title = titleText;
     text = textText;
 
-    /* const handleTitleChange = () => {
-      setTitle(titleText.value);
-      console.log(title);
-    }
   
-    const handleTextChange = () => {
-      setText(textText.value);
-      console.log(text);
-    }
-  
-    handleTextChange();
-    handleTitleChange(); */
-
     if (isFirstTime) {
 
     } else if (!title || !text) {
@@ -61,7 +49,7 @@ const NoteEditor = ({ note }) => {
         await axios.post(`${URL}`, { title, text });
 
       }
-      /* window.location.reload(); */
+      window.location.reload();
     } catch (err) {
       if(isFirstTime === true) {
         isFirstTime = false;
