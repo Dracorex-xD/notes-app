@@ -9,7 +9,6 @@ app.use(express.json());
 //Get
 const getNotes = asyncHandler(async (req, res) => {
     const notes = await Note.find({});
-    console.log(notes);
     res.status(200).json(notes);
 
 });
