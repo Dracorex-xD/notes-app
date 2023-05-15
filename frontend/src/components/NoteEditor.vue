@@ -69,6 +69,10 @@ export default {
 
 <style scoped>
 
+.NoteEditor {  
+  overflow: scroll;
+}
+
 .NoteEditor input, textarea {
   outline: none;
   background: var(--background-color-one);
@@ -78,14 +82,15 @@ export default {
   color: var(--main-color-two);
   font-weight: 700;
   font-size: 1.7rem;
-  font-family: 'Bruno Ace', cursive;
+  font-family: 'Kanit', sans-serif;
   padding: 1rem;
   resize: none;
-  text-shadow: var(--text-shadow-color-one);
   border-image: linear-gradient(to right, var(--main-color-one), var(--shadow-color-one)) 1;
   border-top: none;
   border-left: none;
   border-right: none;
+  max-height: 100vh;
+  grid-row: 1/4;
 
 }
 
@@ -100,63 +105,41 @@ export default {
   color: var(--main-color-two);
   font-weight: 700;
   font-size: 1.7rem;
-  font-family: 'Bruno Ace', cursive;
+  font-family: 'Kanit', sans-serif;
   align-items: center;
-  text-shadow: var(--text-shadow-color-one);
 
 }
 
 .NoteEditor textarea::placeholder {
   padding: 0;
   padding-left: 1rem;
-  overflow: visible;
-
 }
 
 .NoteEditor input::placeholder {
   color: var(--main-color-one);
-  text-shadow: none;
-
 
 }
 
 .NoteEditor input {
   color: var(--main-color-one);
-  text-shadow: none;
+  max-height: 5rem;
+
 }
 
 .NoteEditor textarea {
-  height: 25rem;
+  min-height: 7rem;
   padding: 30px;
 }
-
-.NoteEditor button {
-  outline: none;
-  background: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-radius: 0.5rem;
-  transition: 0.88s;
-  border-image: linear-gradient(to right, var(--main-color-one), var(--shadow-color-one)) 1;
-
-}
-
 .NoteEditorButtons {
   display: flex;
   align-items: center;
-  justify-self: center;
   justify-content: center;
-  height: 5rem;
+  align-self: center;
   margin: 1rem;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  height: 30%;
-  border-image: linear-gradient(to right, var(--main-color-one), var(--shadow-color-one)) 1;
-  transition: 0.88s;
-  width: 5rem;
-  height: 5rem;
+  background: var(--background-color-one);
+  width: 8rem;
+  height: 3.5rem;
+  border-radius: 0.5rem;
 
 }
 
@@ -168,8 +151,14 @@ export default {
 .SaveBtn {
   color: var(--main-color-two);
   font-weight: 700;
-  font-size: 1rem;
-  font-family: 'Bruno Ace', cursive;
-  text-shadow: var(--text-shadow-color-one);
+  font-size: 1.2rem;
+  font-family: 'Kanit', sans-serif;
+  outline: none;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  transition: 0.88s;
+  border-image: linear-gradient(to right, var(--main-color-one), var(--shadow-color-one)) 1;
 }
 </style>

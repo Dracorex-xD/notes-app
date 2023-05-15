@@ -49,25 +49,22 @@ export default {
 </script>
 
 <style scoped>
-li {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
+
 .NoteList {
   grid-column: 1;
   grid-row: 1/4;
   justify-self: center;
   align-self: center;
   overflow: scroll;
-  height: 99.99%;
+  height: 99vh;
 
 }
 
 .NoteList li {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   border-width: 3px;
   border-style: solid;
-  padding: 15px;
   margin: 15px;
   border-top: none;
   border-left: none;
@@ -78,7 +75,6 @@ li {
   max-width: 40rem;
   max-height: 17rem;
   border-image: linear-gradient(to right, var(--main-color-one), var(--shadow-color-one)) 1;
-  grid-template-columns: repeat(2, 1fr);
 
   transition: 0.89s;
 
@@ -95,9 +91,8 @@ li {
   height: 1rem;
   background: none;
   border: none;
-  margin: 10px;
-  text-align:start;
-
+  margin: 5px;
+  align-self: flex-end;
   transition: 1s;
 }
 

@@ -30,24 +30,28 @@
     .Note {
         display: flex;
         color: var(--main-color-one);
-        padding: 15px;
         flex-direction: column;
-        height: 15rem;
-        max-width: 27rem;
+        height: 10rem;
+        padding: 10px;
+        max-width: 20rem;
+        text-align: left;
     }
     .note-text {
         color: var(--main-color-two);
         overflow: hidden;
-        padding: 5px;
+        padding-left: 15px;
         text-shadow: var(--text-shadow-color-one);
         letter-spacing: 1px;
-        margin: 10px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: 5px;
     }
 
     .note-title {
-        overflow: visible;
-        padding: 5px;
-        height: 30rem;
-        width: 25rem;
+        overflow: hidden;
+        padding: 20px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin: 10px;
     }
 </style>
