@@ -3,7 +3,7 @@
     <input class="NoteEditorTitle" v-model="title" placeholder="Title" />
     <textarea class="NoteEditorText" v-model="text" placeholder="Text"></textarea>
     <div class="NoteEditorButtons">
-      <button class="SaveBtn" @click="handleSaveClick">Save</button>
+      <button class="SaveBtn" @click="handleSaveClick" >Save</button>
     </div>
   </div>
 </template>
@@ -57,7 +57,6 @@ export default {
         console.error(err);
       }
     };
-
     return {
       title,
       text,
@@ -75,34 +74,35 @@ export default {
 
 .NoteEditor input, textarea {
   outline: none;
-  background: var(--background-color-one);
+  background: var(--Secondary);
   border-radius: 0.5rem;
   margin: 0.5rem;
-  caret-color: var(--main-color-one);
-  color: var(--main-color-two);
+  caret-color: var(--Primary);
+  color: var(--Secondary-Button);
   font-weight: 700;
   font-size: 1.7rem;
   font-family: 'Kanit', sans-serif;
   padding: 1rem;
   resize: none;
-  border-image: linear-gradient(to right, var(--main-color-one), var(--shadow-color-one)) 1;
+  border-image: linear-gradient(to right, var(--Primary), var(--Secondary-Button)) 1;
   border-top: none;
   border-left: none;
   border-right: none;
   max-height: 100vh;
   grid-row: 1/4;
+  box-shadow: 10px 10px 10px var(--Accent);
 
 }
 
 .NoteEditor input:hover, textarea:hover {
   transition: 0.88s;
-  border-image: linear-gradient(to left, var(--main-color-one), var(--shadow-color-one)) 1;
+  border-image: linear-gradient(to left, var(--Primary), var(--Secondary-Button)) 1;
 }
 
 .NoteEditor input::placeholder, textarea::placeholder {
   text-align: left;
   padding: 1rem;
-  color: var(--main-color-two);
+  color: var(--Secondary-Button);
   font-weight: 700;
   font-size: 1.7rem;
   font-family: 'Kanit', sans-serif;
@@ -116,19 +116,23 @@ export default {
 }
 
 .NoteEditor input::placeholder {
-  color: var(--main-color-one);
+  color: var(--Primary);
 
 }
 
 .NoteEditor input {
-  color: var(--main-color-one);
+  color: var(--Primary);
   max-height: 5rem;
+  background-color: var(--Primary-Button);
+
 
 }
 
 .NoteEditor textarea {
-  min-height: 7rem;
+  max-height: 60vh;
+  min-height: 50%;
   padding: 30px;
+
 }
 .NoteEditorButtons {
   display: flex;
@@ -136,29 +140,28 @@ export default {
   justify-content: center;
   align-self: center;
   margin: 1rem;
-  background: var(--background-color-one);
+  background: var(--Secondary);
   width: 8rem;
   height: 3.5rem;
   border-radius: 0.5rem;
+  box-shadow: 10px 10px 10px var(--Accent);
+  transition: 0.88s;
+  opacity: 0.9;
 
 }
 
-.NoteEditor button:hover {
-  transition: 0.88s;
-  border-image: linear-gradient(to left, var(--main-color-one), var(--shadow-color-one)) 1;
+.NoteEditorButtons:hover {
+  background: var(--Primary-Button);
 }
 
 .SaveBtn {
-  color: var(--main-color-two);
+  color: var(--Primary);
   font-weight: 700;
   font-size: 1.2rem;
   font-family: 'Kanit', sans-serif;
   outline: none;
   background: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  border: none;
   transition: 0.88s;
-  border-image: linear-gradient(to right, var(--main-color-one), var(--shadow-color-one)) 1;
 }
 </style>

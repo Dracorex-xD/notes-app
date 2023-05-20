@@ -1,7 +1,11 @@
 <template>
   <div class="NoteList">
     <ul>
-      <li v-for="note in listOfNotes" :key="note._id" :id="note._id">
+      <li v-for="note in listOfNotes" 
+          :key="note._id" 
+          :id="note._id" 
+          @click="addAnimationClass(note._id)" 
+          :class="{ animation: note.animate }">
         <Note :title="note.title" :text="note.text" :time="note.time" />
         <button @dblclick="deleteNote(note._id)" class="deleteBtn">x</button>
       </li>
@@ -25,6 +29,19 @@ export default {
     }
   },
   methods: {
+
+    addAnimationClass(id) {
+    // Find the note by ID
+    const note = this.listOfNotes.find((note) => note._id === id);
+    if (note) {
+      // Add the 'animate' property to the note
+      note.animate = true;
+
+      setTimeout(() => {
+        note.animate = false;
+      }, 5100);
+      }
+    },
     async deleteNote (id) {
       try {
         await axios.delete(`${this.URL}${id}`)
@@ -42,13 +59,20 @@ export default {
       }
     }
   },
-  created () {
+  created() {
     this.fetchNotes()
-  }
+  },
+
 }
 </script>
 
 <style scoped>
+
+.animation {
+  animation: hoverLinearGradient 5s 0.88s forwards linear;
+  transition: 0.5s;
+
+}
 
 .NoteList {
   grid-column: 1;
@@ -69,20 +93,21 @@ export default {
   border-top: none;
   border-left: none;
   border-right: none;
-  background: var(--background-color-one);
+  background: var(--Secondary);
   border-radius: 0.5rem;
   min-height: 8.5rem;
   max-width: 40rem;
   max-height: 17rem;
-  border-image: linear-gradient(to right, var(--main-color-one), var(--shadow-color-one)) 1;
+  border-image: linear-gradient(to right, var(--Primary), var(--Secondary-Button)) 1;
+  box-shadow: 10px 10px 10px var(--Accent);
 
-  transition: 0.89s;
+  transition: 0.88s;
 
 }
 
 .NoteList li:hover {
   transition: 0.88s;
-  border-image: linear-gradient(to left, var(--main-color-one), var(--shadow-color-one)) 1;
+  border-image: linear-gradient(to left, var(--Primary), var(--Secondary-Button)) 1;
 
 }
 
@@ -92,13 +117,28 @@ export default {
   background: none;
   border: none;
   margin: 5px;
+  padding: 3px;
   align-self: flex-end;
   transition: 1s;
+  color: var(--Primary-Button);
+
 }
 
 .deleteBtn:hover {
   transition: 0.5s;
   font-size: larger;
+  color: var(--Secondary-Button);
+}
+
+@keyframes hoverLinearGradient {
+  0%, 18%, 20%, 50.1%, 60.1%, 80%, 90.1%, 92% {
+    background: var(--Secondary);
+  }
+
+  18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+    background: var(--Primary-Button);
+   
+  }
 }
 
 </style>

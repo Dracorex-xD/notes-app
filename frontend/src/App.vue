@@ -40,10 +40,13 @@ export default {
 
 
 :root {
-  --main-color-one: rgb(213, 155, 37);
-  --main-color-two: #c91974;
-  --shadow-color-one: #030b349b;
-  --background-color-one: #1d1702ca;
+  --Primary: #f1b855 ;
+  --Secondary: rgba(0, 0, 0, 0.915);
+  --Primary-Button: #8b8e71;
+  --Secondary-Button: #d5dbd2;
+  --Accent: #4b5544;
+
+
   
 }
 
@@ -52,7 +55,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: 'Kanit', sans-serif;
-    background: url("./assets/Temp_wallpaper.png") no-repeat center center/ cover;
+    background: url("./assets/Temp_wallpaper.png") no-repeat bottom, url("./assets/Temp_wallpaper_2.png") ;
+    background-color: var(--Secondary);
+    background-size: 100%, 135%;
     overflow: hidden;
     padding: 2rem;
     height: 100vh;
@@ -79,7 +84,7 @@ body {
 }
 
 button {
-  color: var(--main-color-one);
+  color: var(--Primary);
 }
 
 .NoteEditor {
@@ -107,7 +112,7 @@ button {
   grid-column: 2/4;
   padding: 1rem;
   margin-left: 4rem;
-  color:  var(--main-color-one);
+  color:  var(--Primary);
   font-size: 3rem;
   letter-spacing: 7px;
   text-decoration: none;
@@ -115,5 +120,6 @@ button {
 
 ::-webkit-scrollbar {
   display: none;
+
 }
 </style>

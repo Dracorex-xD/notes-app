@@ -2,7 +2,6 @@
     <div class="Note">
         <h1 class="note-title">{{ title }}</h1>
         <p class="note-text">{{ text }}</p>
-        <div class="timestamp">{{ time }}</div>
     </div>
     </template>
 
@@ -18,10 +17,6 @@
         text: {
         type: String,
         required: true
-        },
-        time: {
-        type: String,
-        required: true
         }
     }
     }
@@ -29,7 +24,7 @@
 <style scoped>
     .Note {
         display: flex;
-        color: var(--main-color-one);
+        color: var(--Primary);
         flex-direction: column;
         height: 10rem;
         padding: 10px;
@@ -37,10 +32,10 @@
         text-align: left;
     }
     .note-text {
-        color: var(--main-color-two);
+        color: var(--Secondary-Button);
         overflow: hidden;
         padding-left: 15px;
-        text-shadow: var(--text-shadow-color-one);
+        text-shadow: var(--Accent);
         letter-spacing: 1px;
         text-overflow: ellipsis;
         white-space: nowrap;
